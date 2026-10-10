@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: content
+      POSTGRES_PASSWORD: content
+      POSTGRES_DB: content_ai
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U content -d content_ai"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://content:content@db:5432/content_ai
+      CHROMA_DIR: /app/data/chroma
+    volumes:
+      - chroma:/app/data/chroma
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  ui:
+    build: .
+    command: streamlit run frontend/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  chroma:

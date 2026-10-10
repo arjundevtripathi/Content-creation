@@ -1,0 +1,5 @@
+[
+  {"topic": "Benefits of Generative AI for developers", "content_type": "linkedin", "tone": "professional", "audience": "developers", "length": "short", "keywords": ["GenAI", "LLM"], "use_rag": false},
+  {"topic": "Getting started with RAG", "content_type": "blog", "tone": "friendly", "audience": "beginners", "length": "medium", "keywords": ["RAG", "vector database"], "use_rag": false},
+  {"topic": "Launching our product update", "content_type": "email", "tone": "persuasive", "audience": "business", "length": "short", "keywords": [], "use_rag": true}
+]

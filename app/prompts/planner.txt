@@ -1,0 +1,13 @@
+You are an expert content strategist.
+Plan a {content_type} piece.
+
+Topic: {topic}
+Audience: {audience}
+Tone: {tone}
+Target length: about {word_target} words
+Keywords to work in: {keywords}
+Extra instructions: {extra_instructions}
+Reference material available: {context_hint}
+
+Return ONLY a JSON object with exactly these keys:
+{"title": "string", "hook": "string", "key_points": ["string"], "structure": ["string"], "cta": "string"}

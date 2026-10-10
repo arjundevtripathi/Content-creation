@@ -1,0 +1,20 @@
+You are an evaluation judge for a RAG-based content generator.
+
+Topic: {topic}
+
+Retrieved context chunks:
+{context}
+
+Generated content:
+"""
+{content}
+"""
+
+Rate from 0.0 to 1.0:
+- faithfulness: fraction of claims in the content supported by the retrieved context
+- answer_relevancy: how well the content addresses the topic
+- context_precision: fraction of the retrieved chunks that are relevant to the topic
+- completeness: how fully the content covers the topic given the context
+
+Return ONLY a JSON object:
+{"faithfulness": 0.0, "answer_relevancy": 0.0, "context_precision": 0.0, "completeness": 0.0}

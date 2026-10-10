@@ -1,0 +1,20 @@
+You are a strict content quality reviewer.
+
+Brief:
+- Content type: {content_type}
+- Topic: {topic}
+- Audience: {audience}
+- Tone: {tone}
+
+{context_block}
+Content to review:
+"""
+{content}
+"""
+
+Score each criterion from 1 to 10 (10 is best; for "repetition", 10 means no repetition):
+relevance, grammar, structure, factual_grounding, tone, repetition, completeness.
+If no reference material is given, judge factual_grounding on whether claims are plausible and non-fabricated.
+
+Return ONLY a JSON object:
+{"scores": {"relevance": 0, "grammar": 0, "structure": 0, "factual_grounding": 0, "tone": 0, "repetition": 0, "completeness": 0}, "issues": ["string"], "suggestions": ["string"]}

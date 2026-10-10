@@ -1,0 +1,10 @@
+Rewrite the content below according to the instruction. Keep the facts and the format ({content_type}) unless the instruction says otherwise.
+
+Instruction: {instruction}
+
+Content:
+"""
+{content}
+"""
+
+Output only the rewritten content, with no preamble.

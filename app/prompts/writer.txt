@@ -1,0 +1,21 @@
+Write a {content_type} on the topic below.
+
+Topic: {topic}
+Audience: {audience}
+Tone: {tone}
+Target length: about {word_target} words
+Keywords to include naturally: {keywords}
+Extra instructions: {extra_instructions}
+
+Format requirements:
+{format_guide}
+
+Content plan (follow it):
+{plan}
+
+{context_block}
+{revision_block}
+Rules:
+- Use the title and hook from the plan.
+- Only state facts you can support. If reference material is provided, ground claims in it and do not invent product details.
+- Output only the finished content, with no preamble or commentary.
